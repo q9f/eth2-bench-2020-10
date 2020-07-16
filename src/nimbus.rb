@@ -13,9 +13,10 @@ def get_peer_count
 	begin
 		uri = URI.parse("http://#{@HOST}:#{@PORT}")
 		request = Net::HTTP::Post.new(uri)
+		request.content_type = "application/json"
 		request.body = JSON.dump({
 			"jsonrpc" => "2.0",
-			"id" => "id",
+			"id" => "13",
 			"method" => "getNetworkPeers",
 			"params" => []
 		})
@@ -35,9 +36,10 @@ def get_slot_height
 	begin
 		uri = URI.parse("http://#{@HOST}:#{@PORT}")
 		request = Net::HTTP::Post.new(uri)
+		request.content_type = "application/json"
 		request.body = JSON.dump({
 			"jsonrpc" => "2.0",
-			"id" => "id",
+			"id" => "14",
 			"method" => "getBeaconHead",
 			"params" => []
 		})
