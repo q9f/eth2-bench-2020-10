@@ -35,7 +35,7 @@ _Work in progress..._
 - Built in `installDist` mode
 - Permalink: https://github.com/PegaSysEng/teku/tree/04b0a00a27851e0ad154dc8f61103d89002120c9
 
-# Nimbus
+### Nimbus
 - `Nimbus beacon node v0.5.0 (3dfbc31)`
 - `devel` @ 3dfbc311ad7337c6a085e8328002cec5e9640394 (July/15, 2020)
 - Nim `1.2.2`, Make `4.2.1`
