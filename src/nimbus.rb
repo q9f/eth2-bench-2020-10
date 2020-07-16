@@ -6,13 +6,27 @@ require 'json'
 
 @HOST = "127.0.0.1"
 @PORT = 9090
+@METR = 8008
 @DATA = "$HOME/.local/share/nimbus/db/"
 
 def get_peer_count
 	begin
-		uri = URI.parse("http://#{@HOST}:#{@PORT}/network/peer_count")
-		response = Net::HTTP.get_response(uri)
-		peer_count = response.body.to_i
+		uri = URI.parse("http://#{@HOST}:#{@PORT}")
+		request = Net::HTTP::Post.new(uri)
+		request.body = JSON.dump({
+			"jsonrpc" => "2.0",
+			"id" => "id",
+			"method" => "getNetworkPeers",
+			"params" => 
+			]
+		})
+		req_options = {
+			use_ssl: uri.scheme == "https",
+		}
+		response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+			http.request(request)
+		end
+		peer_count = JSON.parse(response.body)["result"].size
 	rescue
 		peer_count = -9
 	end
@@ -20,9 +34,22 @@ end
 
 def get_slot_height
 	begin
-		uri = URI.parse("http://#{@HOST}:#{@PORT}/beacon/head")
-		response = Net::HTTP.get_response(uri)
-		slot_height = JSON.parse(response.body)["slot"].to_i
+		uri = URI.parse("http://#{@HOST}:#{@PORT}")
+		request = Net::HTTP::Post.new(uri)
+		request.body = JSON.dump({
+			"jsonrpc" => "2.0",
+			"id" => "id",
+			"method" => "getBeaconHead",
+			"params" => 
+			]
+		})
+		req_options = {
+			use_ssl: uri.scheme == "https",
+		}
+		response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+			http.request(request)
+		end
+		slot_height = JSON.parse(response.body)["result"].to_i
 	rescue
 		slot_height = -9
 	end
@@ -37,13 +64,19 @@ def get_database_size
 end
 
 def get_memory_usage
+	memory_usage = -7
 	begin
-		uri = URI.parse("http://#{@HOST}:#{@PORT}/node/health")
+		uri = URI.parse("http://#{@HOST}:#{@METR}/metrics")
 		response = Net::HTTP.get_response(uri)
-		memory_usage = JSON.parse(response.body)["pid_mem_resident_set_size"].to_i
+		response.body.each_line do |metric|
+			if not metric[0].include? "#" and metric.include? "process_resident_memory_bytes"
+				memory_usage = metric.split(" ").last.to_f.to_i
+			end
+		end
 	rescue
 		memory_usage = -9
 	end
+	memory_usage
 end
 
 def get_unix_time
