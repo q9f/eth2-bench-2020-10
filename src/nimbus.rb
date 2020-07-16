@@ -17,11 +17,10 @@ def get_peer_count
 			"jsonrpc" => "2.0",
 			"id" => "id",
 			"method" => "getNetworkPeers",
-			"params" => 
-			]
+			"params" => []
 		})
 		req_options = {
-			use_ssl: uri.scheme == "https",
+			use_ssl: uri.scheme == "https"
 		}
 		response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
 			http.request(request)
@@ -40,11 +39,10 @@ def get_slot_height
 			"jsonrpc" => "2.0",
 			"id" => "id",
 			"method" => "getBeaconHead",
-			"params" => 
-			]
+			"params" => []
 		})
 		req_options = {
-			use_ssl: uri.scheme == "https",
+			use_ssl: uri.scheme == "https"
 		}
 		response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
 			http.request(request)
