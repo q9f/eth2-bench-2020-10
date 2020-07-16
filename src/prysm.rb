@@ -5,7 +5,7 @@ require 'uri'
 require 'json'
 
 @HOST = "127.0.0.1"
-@PORT = 3000
+@PORT = 3500
 @METR = 8080
 @DATA = "$HOME/.eth2/beaconchaindata/"
 
