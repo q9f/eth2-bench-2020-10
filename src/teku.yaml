@@ -1,0 +1,20 @@
+network: "altona"
+
+eth1-endpoint: "http://127.0.0.1:8545"
+
+logging: "INFO"
+log-color-enabled: true
+log-include-events-enabled: true
+
+p2p-port: 30000
+p2p-advertised-port: 30000
+p2p-enabled: true
+p2p-discovery-enabled: true
+p2p-snappy-enabled: true
+
+rest-api-port: 5051
+rest-api-enabled: True
+rest-api-interface: "127.0.0.1"
+
+metrics-enabled: True
+metrics-port: 8008
