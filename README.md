@@ -39,7 +39,7 @@ _Work in progress..._
 - `Nimbus beacon node v0.5.0 (3dfbc31)`
 - `devel` @ 3dfbc311ad7337c6a085e8328002cec5e9640394 (July/15, 2020)
 - Nim `1.2.2`, Make `4.2.1`
-- Built in `-d:release` mode
+- Built in `-d:release -d:insecure` mode
 - Permalink: https://github.com/status-im/nim-beacon-chain/tree/3dfbc311ad7337c6a085e8328002cec5e9640394
 
 ### Altona testnet
