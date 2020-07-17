@@ -5,7 +5,7 @@ Preliminary, high-level ETH2-client benchmarks.
 - [x] Teku
 - [x] Nimbus
 
-_Work in progress..._
+![preview](./res/preview.png)
 
 ### Host systems (4x)
 - Machine: Scaleway GP-BM1-S (bare metal)
