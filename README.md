@@ -5,6 +5,8 @@ Preliminary, high-level ETH2-client benchmarks.
 - [x] Teku
 - [x] Nimbus
 
+**PDF: [2020-07-eth2-bench.pdf](./res/2020-07-eth2-bench.pdf)**
+
 ![preview](./res/preview.png)
 
 ### Host systems (4x)
