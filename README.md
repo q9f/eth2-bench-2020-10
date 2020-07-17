@@ -8,7 +8,7 @@ Preliminary, high-level ETH2-client benchmarks.
 _Work in progress..._
 
 ### Host systems (4x)
-- Machine: Scaleway GP-BM1-S (bare metal)_
+- Machine: Scaleway GP-BM1-S (bare metal)
 - OS: Ubuntu 20.04 LTS, kernel 5.4.0-40-generic #44-Ubuntu
 - CPU: Intel Xeon E3-1240 v6, 8 cores
 - RAM: 32 GB
