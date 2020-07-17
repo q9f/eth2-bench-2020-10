@@ -33,7 +33,7 @@
 \setlength{\droptitle}{-4\baselineskip}
 \pretitle{\begin{center}\Huge\bfseries}
 \posttitle{\end{center}}
-\title{Ethereum 2.0 Client Metrics}
+\title{Ethereum 2.0 Client Metrics 07/2020}
 \author{\textsc{Afri Schoedon, \href{https://github.com/q9f}{@q9f}}}\date{\today}
 
 \begin{document}
@@ -72,9 +72,9 @@
 \end{figure}
 
 \subsection{Motivation}
-None of the features that Ethereum 2.0 will bring are being implemented in established Ethereum 1.x clients such as Geth or Besu. Therefore, it's being worked on a new generation of core clients to power the beacon chain. None of these clients has ever been used in production before.\par
+None of the features that Ethereum 2.0 will bring are being implemented in established Ethereum 1.x clients such as Geth or Besu. Therefore, a new generation of core clients to power the beacon chain is under development. None of these clients has ever been used in production before.\par
 
-With the launch of the beacon chain supposedly happening in 2020, the second gathering of key metrics of four selected Ethereum 2.0 clients will be conducted, namely Lighthouse, Prysm, Teku, and Nimbus.\par
+With the launch of the beacon chain supposedly happening in 2020, the second compilation of key metrics of four selected Ethereum 2.0 clients will be conducted, namely Lighthouse, Prysm, Teku, and Nimbus.\par
 
 This work shall allow insights into the performance and stability of the given beacon-chain node implementations.\par
 
@@ -83,15 +83,15 @@ In June 2020, a similar, preliminary benchmark has been conducted\footnote{\href
 
 Before diving into the results, please note the following.
 
-\begin{itemize}
-\item Most importantly, this work adds Nimbus to the list of profiled clients, allowing for comparing four client's metrics instead of three.
-\item The numbers in this report are \textit{not} comparable with numbers in the previous report. This is mainly due to using different, dedicated, bare-metal hardware for gathering these numbers as compared to the virtual hosts used in the previous work.
+\begin{enumerate}
+\item Most importantly, this work adds Nimbus to the list of profiled clients, allowing for a comparison of four client's metrics instead of three.
+\item The numbers in this report are \textit{not} comparable with numbers in the previous report. This is mainly due to the use of different, dedicated, bare-metal hardware for determining these numbers as compared to the virtual hosts used in the previous work.
 \item Unfortunately, the previous report contained a methodological inaccuracy. While all clients were run under the same conditions doing a full synchronization, the Prysm client was not built with optimized compiler settings. The team is aware and the documentation will be updated accordingly for all users\footnote{\href{https://github.com/prysmaticlabs/documentation/issues/189}{prysmaticlabs/documentation\#189}}. This has been revised and all clients are provided with release binaries.
 \item Last but not least, this benchmark was conducted on the Altona testnet\footnote{\href{https://github.com/goerli/altona}{github.com/goerli/altona}}. In contrast to the Witti testnet used in the last report, the Altona testnet has a different composition of validators and currently contains fewer blocks than the Witti testnet had in June 2020.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Commented Data}
-This article seeks to document the gathered metrics of different clients adhering to scientific methodology. It does not, however, intend to replace a peer-reviewed publication. It's simply a version of the data commented by the author.\par
+This article seeks to document the gathered metrics of different clients adhering to scientific methodology. It does not, however, intend to replace a peer-reviewed publication. It simply represents a version of the data commented by the author.\par
 
 The raw data is available on Github\footnote{\href{https://github.com/q9f/eth2-bench-2020-07}{github.com/q9f/eth2-bench-2020-07}} for further analysis.
 
@@ -100,13 +100,13 @@ The raw data is available on Github\footnote{\href{https://github.com/q9f/eth2-b
 
 Four clients are used for comparing key-performance metrics.\par
 
-\textsc{Lighthouse} is an Ethereum 2.0 client developed by Sigma Prime\footnote{\href{https://github.com/sigp/lighthouse}{github.com/sigp/lighthouse}}. It's implemented in the Rust programming language. Data referring to the Lighthouse client is depicted in orange throughout this document (figure \ref{img:lh}).\par
+\textsc{Lighthouse} is an Ethereum 2.0 client developed by Sigma Prime\footnote{\href{https://github.com/sigp/lighthouse}{github.com/sigp/lighthouse}}. It is implemented in the Rust programming language. Data referring to the Lighthouse client is depicted in orange throughout this document (figure \ref{img:lh}).\par
 
-\textsc{Prysm} is a beacon-chain implementation written in Go\footnote{\href{https://github.com/prysmaticlabs/prysm}{github.com/prysmaticlabs/prysm}}. It's being maintained by the Prysmatic Labs team. Data referring to the Prysm client is depicted in purple throughout this document (figure \ref{img:pr}).\par
+\textsc{Prysm} is a beacon-chain implementation written in Go\footnote{\href{https://github.com/prysmaticlabs/prysm}{github.com/prysmaticlabs/prysm}}. It is being maintained by the Prysmatic Labs team. Data referring to the Prysm client is depicted in purple throughout this document (figure \ref{img:pr}).\par
 
-\textsc{Teku} is an enterprise-grade Ethereum 2.0 client built by the PegaSys Engineering team\footnote{\href{https://github.com/PegaSysEng/teku}{github.com/PegaSysEng/teku}}. It's implemented in Java and data referring to the Teku client is depicted in turquoise throughout this document (figure \ref{img:tk}).\par
+\textsc{Teku} is an enterprise-grade Ethereum 2.0 client built by the PegaSys Engineering team\footnote{\href{https://github.com/PegaSysEng/teku}{github.com/PegaSysEng/teku}}. It is implemented in Java and data referring to the Teku client is depicted in turquoise throughout this document (figure \ref{img:tk}).\par
 
-\textsc{Nimbus} is a beacon node implementation written in Nim built by the Status team\footnote{\href{https://github.com/status-im/nim-beacon-chain}{github.com/status-im/nim-beacon-chain}}. Data referring to the Nim Beacon Chain client is depicted in blue throughout this document (figure \ref{img:nb}).\par
+\textsc{Nimbus} is a beacon-node implementation written in Nim built by the Status team\footnote{\href{https://github.com/status-im/nim-beacon-chain}{github.com/status-im/nim-beacon-chain}}. Data referring to the Nim-Beacon-Chain client is depicted in blue throughout this document (figure \ref{img:nb}).\par
 
 Other clients implementing the Ethereum 2.0 protocol exist, namely ChainSafe Systems' \textsc{Lodestar}\footnote{\href{https://github.com/ChainSafe/lodestar}{github.com/ChainSafe/lodestar}}, Nethermind's \textsc{Cortex}\footnote{\href{https://github.com/NethermindEth/cortex}{github.com/NethermindEth/cortex}}, and the Ethereum Foundation's \textsc{Trinity}\footnote{\href{https://github.com/ethereum/trinity}{github.com/ethereum/trinity}}. Due to the different progress of implementing the protocol specification and core components, these clients were not considered for comparison, yet.\par
 
@@ -184,7 +184,7 @@ The data at glance.
 \item \textbf{Nimbus} catches up with 124,051 slots in 24,844 seconds at 4.9932 slots per second.
 \end{itemize}
 
-All clients do a full verification of all signatures during synchronization by default. The teams currently working on integrating new \texttt{bls} libraries.\par
+All clients do a full verification of all signatures during synchronization by default. The teams currently working on integrating new \texttt{bls} libraries which could improve these metrics even further.\par
 
 \subsection{Database Metrics}
 Figure \ref{img:db} displays the database size in Bytes plotted over time of running the nodes. The patterns are left uncommented for the client developers to analyze.\par
@@ -197,7 +197,7 @@ The data at glance.
 \item \textbf{Nimbus} requires 3.98 GiB after 124,295 slots.
 \end{itemize}
 
-The data indicates that the Teku, Prysm, and Lighthouse clients implement database pruning, i.e., by removing everything that is invalidated by finalization or non-checkpointed states. The Nimbus client is running in archive mode by default.\par
+The data indicates that the Teku, Prysm, and Lighthouse clients implement database pruning by default, i.e., by removing everything that is invalidated by finalization or non-checkpointed states. The Nimbus client is running in archive mode by default.\par
 
 \subsection{Memory Metrics}
 Figure \ref{img:mem} displays resident set size reported by the four clients. Again, the patterns are left uncommented. Notably, the Nimbus and Lighthouse clients appear to be most efficient concerning memory usage, requiring around 500 MiB in default operation mode. Prysm peaks at just below 1.3 GiB.\par
@@ -206,9 +206,9 @@ Teku reports a little less than 10 GiB. The actual Java heap memory used by Teku
 
 \subsection{Networking Metrics}
 \label{sec:perf:p2p}
-Figure \ref{img:per} displays the peer count of every client during operation. There is not much to be commented on and just serves as a sanity check to rule out networking issues that could impact any of the other metrics.\par
+Figure \ref{img:per} displays the peer count of every client during operation. There is not much to be commented on. This metric simply serves as a sanity check to rule out networking issues that could impact any of the other metrics.\par
 
-Notably, there is a drastic drop in peers of the Nimbus client which, however, does not appear to correlate to any of the other metrics collected above.\par
+Notably, there is a drastic drop in peers of the Nimbus client which, however, does not appear to correlate with any of the other metrics collected above.\par
 
 \section{Conclusion}
 The plots allow for an overview of key performance and stability metrics of the four tested clients.\par
@@ -217,7 +217,7 @@ Notably, both Lighthouse and Prysm appear to be highly optimized in their perfor
 
 The relatively new Teku client already shows good performance but the metrics allow the conclusion that there is still room for optimization, especially regarding its memory footprint.\par
 
-The Nimbus client which premiered the first time as genesis validator on the Altona testnet shows potential for implementing further features such as pruning and optimizations of the networking and verification code.\par
+The Nimbus client which premiered as genesis validator on the Altona testnet shows potential for implementing further features such as pruning and optimizations of the networking and verification code.\par
 
 \vspace{\fill}
 
