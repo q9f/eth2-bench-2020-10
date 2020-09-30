@@ -2,7 +2,8 @@
 
 while true
 do
-  lighthouse bn --http \
-  --testnet medalla >& ../log/light.log
+  lighthouse bn --http --eth1 \
+  --testnet medalla \
+  --eth1-endpoint http://127.0.0.1:8545 >& ../log/light.log
   sleep 10
 done
