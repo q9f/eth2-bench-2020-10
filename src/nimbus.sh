@@ -4,7 +4,7 @@ while true
 do
   beacon_node --log-level="INFO" \
   --network="medalla" \
-  --data-dir="$HOME/.local/share/nimbus/" \
+  --data-dir="/data/nimbus/" \
   --web3-url="http://127.0.0.1:8545" \
   --non-interactive="True" \
   --status-bar="False" \

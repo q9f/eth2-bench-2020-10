@@ -1,5 +1,7 @@
 eth1-endpoint: "http://127.0.0.1:8545"
 
+data-path: "/data/teku"
+
 logging: "INFO"
 log-color-enabled: true
 log-include-events-enabled: true

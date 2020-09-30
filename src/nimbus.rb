@@ -7,7 +7,7 @@ require 'json'
 @HOST = "127.0.0.1"
 @PORT = 9090
 @METR = 8090
-@DATA = "$HOME/.local/share/nimbus/db/"
+@DATA = "/data/nimbus/db/"
 
 def get_peer_count
 	begin

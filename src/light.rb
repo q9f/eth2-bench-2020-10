@@ -6,7 +6,7 @@ require 'json'
 
 @HOST = "127.0.0.1"
 @PORT = 5052
-@DATA = "$HOME/.lighthouse/beacon/chain_db/"
+@DATA = "/data/lighthouse/beacon/chain_db/"
 
 def get_peer_count
 	begin

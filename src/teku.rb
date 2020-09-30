@@ -7,7 +7,7 @@ require 'json'
 @HOST = "127.0.0.1"
 @PORT = 5051
 @METR = 8008
-@DATA = "$HOME/.local/share/teku/data/db/"
+@DATA = "/data/teku/data/db/"
 
 def get_peer_count
 	begin
