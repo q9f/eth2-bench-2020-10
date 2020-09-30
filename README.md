@@ -1,13 +1,14 @@
-# Multi-client benchmark on Altona testnet 2020/07/16
+# Multi-client benchmark on Medalla testnet 2020/10/01
 Preliminary, high-level ETH2-client benchmarks.
 - [x] Lighthouse
 - [x] Prysm
 - [x] Teku
 - [x] Nimbus
+- [x] Lodestar
 
-**PDF: [2020-07-eth2-bench.pdf](./res/2020-07-eth2-bench.pdf)**
+PDF: no
 
-![preview](./res/preview.png)
+no preview
 
 ### Host systems (4x)
 - Machine: Scaleway GP-BM1-S (bare metal)

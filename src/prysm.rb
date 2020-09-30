@@ -58,8 +58,6 @@ def get_unix_time
 end
 
 print "time,db,mem,slot,bps,peers\n"
-prev_h = 0
-prev_t = get_unix_time
 
 loop do
 	t = get_unix_time
@@ -67,15 +65,8 @@ loop do
 	h = get_slot_height
 	s = get_database_size
 	m = get_memory_usage
-	dt = t.to_f - prev_t.to_f
-	b = 0.0
-	if dt > 0
-		b = (h.to_f - prev_h.to_f) / dt
-	end
 
-	print "#{t},#{s},#{m},#{h},#{b},#{c}\n"
+	print "#{t},#{s},#{m},#{h},#{c}\n"
 
-	prev_t = t
-	prev_h = h
 	sleep 1
 end

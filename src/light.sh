@@ -2,6 +2,7 @@
 
 while true
 do
-  lighthouse bn --http >& /root/gather/light.log
+  lighthouse bn --http \
+  --testnet medalla >& ../log/light.log
   sleep 10
 done
