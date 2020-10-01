@@ -1,3 +1,6 @@
+# Nimbus log is 800MB
+log/nimbus*
+
 # Logs
 logs
 npm-debug.log*
