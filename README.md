@@ -2,13 +2,13 @@
 Preliminary, high-level ETH2-client benchmarks.
 - [x] Lighthouse
 - [x] Prysm
-- [x] Teku
 - [x] Nimbus
+- [x] Teku
 - [ ] Lodestar
 
-PDF: no
+**PDF: [2020-10-eth2-bench.pdf](./res/2020-10-eth2-bench.pdf)**
 
-no preview
+![preview](./res/preview.png)
 
 ### Host systems (4x)
 - Machine: Scaleway HC-BM1-S (bare metal)
@@ -29,18 +29,18 @@ no preview
 - Go `1.13.8`, Bazel `3.5.0`
 - Built in `--config=release` mode
 
-### Teku
-- `teku/v0.12.8/linux-x86_64/-privatebuild-openjdk64bitservervm-java-14`
-- https://github.com/PegaSysEng/teku/releases/tag/0.12.8
-- Java `14.0.1`, Gradle `6.5.1`
-- Built in `installDist` mode
-
 ### Nimbus
 - `Nimbus beacon node v0.5.0 (78ceeed8)`
 - `master` @ 78ceeed8042d6b70d9c1aae09688d43ff79db6e2 (Sept/29, 2020)
 - Nim `1.2.6`, Make `4.2.1`
 - Built in `-d:release -d:insecure` mode
 - Permalink: https://github.com/status-im/nim-beacon-chain/tree/78ceeed8042d6b70d9c1aae09688d43ff79db6e2
+
+### Teku
+- `teku/v0.12.8/linux-x86_64/-privatebuild-openjdk64bitservervm-java-14`
+- https://github.com/PegaSysEng/teku/releases/tag/0.12.8
+- Java `14.0.1`, Gradle `6.5.1`
+- Built in `installDist` mode
 
 ### Medalla testnet
 - Spec version: `v0.12.2`

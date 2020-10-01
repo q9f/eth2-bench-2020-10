@@ -13,8 +13,8 @@ col_nb = c("#053061", "#2166ac", "#4393c3")
 
 pairs(lh[,c(1, 4, 6, 2, 3, 5)], main="Lighthouse", pch=".", col=alpha(col_lh[3], 0.3))
 pairs(pr[,c(1, 4, 6, 2, 3, 5)], main="Prysm", pch=".", col=alpha(col_pr[3], 0.3))
-pairs(tk[,c(1, 4, 6, 2, 3, 5)], main="Teku", pch=".", col=alpha(col_tk[3], 0.3))
 pairs(nb[,c(1, 4, 6, 2, 3, 5)], main="Nimbus", pch=".", col=alpha(col_nb[3], 0.3))
+pairs(tk[,c(1, 4, 6, 2, 3, 5)], main="Teku", pch=".", col=alpha(col_tk[3], 0.3))
 
 sync <- plot(lh$time, lh$slot, main="Synchronization Progress", xlab="Unix [s]", ylab="Slot [1]", pch=".", ylim=c(0, 430000), col=alpha(col_lh[3], 0.3))
 sync <- lines(pr$time, pr$slot, type="p", pch=".", col=alpha(col_pr[3], 0.3))
@@ -89,7 +89,7 @@ bps <- text(1601520000, 86, "--- Prysm", cex=0.8, pos=4, col=col_pr[1])
 bps <- text(1601520000, 74, "--- Nimbus", cex=0.8, pos=4, col=col_nb[1])
 bps <- text(1601520000, 64, "--- Teku", cex=0.8, pos=4, col=col_tk[1])
 
-# start 1601464333  0   0   0   0   0   0   0   
+# start 1601464333  0   0   0   0   0   0   0
 # light 1601480188	4811144676	2813214720	411181	51	13.6451612903226
 # 4 hours 24 minutes 15 seconds (15855) 25.93383790602333648691
 
