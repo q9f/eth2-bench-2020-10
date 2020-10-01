@@ -1,4 +1,4 @@
-# Nimbus log is 800MB
+# Nimbus log is multiple GB
 log/nimbus*
 
 # Logs
